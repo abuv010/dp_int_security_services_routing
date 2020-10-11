@@ -1,0 +1,265 @@
+<routingDestinations>
+	<service id="/TestWebServiceSecurityServer/services/HelloWorldyy">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<sslid>dp_to_service_ssl_all</sslid>
+		<ast>false</ast>
+
+	</service>
+
+	<service id="/SecurityServiceBIOCashSend">
+		<!--**<host>wauur01.absa.co.za</host>-->
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<!--<port>9084</port>
+		<sslid>dp_to_service_ssl_all</sslid>-->
+		<ast>false</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>bio_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+
+		</crypto>
+	</service>
+
+
+	<service id="/IDX/IBIDXService.svc">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<sslid>dp_to_service_ssl_all</sslid>
+		<ast>false</ast>
+
+		<crypto>
+			<signature>
+				<upstreamsig>idx_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>idx_verify.xsl</downstreamverify>
+			</signature>
+
+			<encryption>
+				<upstreamdec></upstreamdec>
+				<downstreamdec>absa_dec.xsl</downstreamdec>
+				<upstreamenc>idx_enc.xsl</upstreamenc>
+				<downstreamenc></downstreamenc>
+			</encryption>
+		</crypto>
+	</service>
+
+
+	<service id="/SecurityServiceSybrin">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>false</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>SYBRIN_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/BOC/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>false</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>BOC_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/BII-CredentialManager/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>BII-CredentialManager_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/TradeFinance/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>TradeFinance_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/Exergy/SecurityService">
+		<host>wauur01.absa.co.za</host>
+		<port>9084</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>Exergy_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/IDIRECT/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>IDIRECT_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/MQE/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>MQE_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/CSSP/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>CSSP_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+	
+		<service id="/SMAPP/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>SMAPP_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+	
+
+	<service id="/CSSP/SecurityService1">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>CSSP_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/AgriBank/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>AgriBank_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+	<service id="/ESP/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>true</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>ESP_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+         <service id="/VoiceBioMetric/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>false</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>VoiceBioMetric_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+        <service id="/IDP/SecurityService">
+		<host>wasdev.absa.co.za</host>
+		<port>80</port>
+		<ast>false</ast>
+		<uriout>/SecurityService/services/SecurityService</uriout>
+		<crypto>
+			<signature>
+				<upstreamsig>IDP_sign.xsl</upstreamsig>
+				<downstreamsig>absa_sign.xsl</downstreamsig>
+				<upstreamverify>absa_verify.xsl</upstreamverify>
+				<downstreamverify>absa_verify.xsl</downstreamverify>
+			</signature>
+		</crypto>
+	</service>
+
+</routingDestinations>
