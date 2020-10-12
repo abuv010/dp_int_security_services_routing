@@ -23,7 +23,9 @@ pipeline {
        }
         stage('Encoding routing.xml to base64') {
           steps {
-             sh 'file=$(base64 routing.xml)'
+		     sh '''
+               file=$(base64 routing.xml)
+			 '''
           }
         }
         stage('Generating request.xml payload') {
