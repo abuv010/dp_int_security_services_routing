@@ -29,7 +29,7 @@ pipeline {
         stage('Generating request.xml payload') {
           steps {
              sh '''
-             requestmsg="<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'><soapenv:Body><dp:request domain='${domain}'  xmlns:dp='http://www.datapower.com/schemas/management'><dp:set-file name='local:///Infrastructure/routing.xml'>$(base64 routing.xml)</dp:set-file></dp:request></soapenv:Body></soapenv:Envelope>"
+             requestmsg="<?xml version='1.0' encoding='UTF-8'?><soapenv:Envelope xmlns:soapenv='http://schemas.xmlsoap.org/soap/envelope/'><soapenv:Body><dp:request domain='${domain}'  xmlns:dp='http://www.datapower.com/schemas/management'><dp:set-file name='local:///Infrastructure/routing.xml'>${file}</dp:set-file></dp:request></soapenv:Body></soapenv:Envelope>"
              printf "%s" "$requestmsg" > request.xml
              '''
           }
